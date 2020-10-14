@@ -17,3 +17,9 @@ cap = VideoCapture('admin','admin888888','192.168.50.108')
 frame = cap.read()
 ```
 this will always give you the most updated frame. 
+
+## Test 
+To test your network camera, simply run
+```
+python3 read.py
+```
