@@ -29,6 +29,15 @@ class VideoCapture:
 
 if __name__ == '__main__':
 
-    cap = VideoCapture('admin','admin888888','192.168.50.108')
-    frame = cap.read()
-    print(f'Camera read, Size of frame is {np.shape(frame)}')
+    cap = VideoCapture('admin','Aiacademy2021','192.168.50.7')
+    while True:
+        try:
+            frame = cap.read()
+            cv2.imshow("img",frame)
+            cv2.waitKey(1)
+            print(f'Camera read, Size of frame is {np.shape(frame)}')
+        except KeyboardInterrupt:
+            print("Stopping Stream")
+            break
+
+
