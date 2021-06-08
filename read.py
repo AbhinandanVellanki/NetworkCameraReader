@@ -5,8 +5,8 @@ import numpy as np
 class VideoCapture:
 
     def __init__(self,username,password,ip_address):
-        pipeline = "rtspsrc location=rtsp://admin:Aiacademy2021@192.168.50.7:554 latency=0 ! rtph265depay ! queue ! h265parse ! omxh265dec ! videoconvert ! appsink"
-        gst = "rtspsrc location=rtsp://admin:Aiacademy2021@192.168.50.7:554/test latency=0 ! rtph265depay ! h265parse ! omxh265dec ! videoconvert ! appsink"
+        #pipeline = "rtspsrc location=rtsp://admin:Aiacademy2021@192.168.50.7:554 latency=0 ! rtph265depay ! queue ! h265parse ! omxh265dec ! videoconvert ! appsink"
+        #gst = "rtspsrc location=rtsp://admin:Aiacademy2021@192.168.50.7:554/test latency=0 ! rtph265depay ! h265parse ! omxh265dec ! videoconvert ! appsink"
         self.cap = cv2.VideoCapture(f"rtsp://{username}:{password}@{ip_address}:554/cam/realmonitor?channel=1@subtype=1")
         #self.cap = cv2.VideoCapture(pipeline)
         self.q = queue.Queue()
